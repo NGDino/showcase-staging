@@ -4,14 +4,7 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'nav-items',
-      title: 'Nav Items',
-      type: 'array',
-      description: '',
-      of: [{type: 'string'}]
-    },
-    {
-      name: 'hero-image',
+      name: 'heroImage',
       title: 'Banner Image',
       type: 'image',
       description: 'The image that will be your header for the site.',
@@ -20,19 +13,47 @@ export default {
       },
       fields: [
         {
+          name: 'headline',
+          type: 'string',
+          title: 'headline',
+          description: 'Biggest text area on banner'
+        },
+        {
+          name: 'descriptor',
+          type: 'string',
+          title: 'descriptor',
+          description: 'The text that will go above headline.'
+        },
+        {
           name: 'tagline',
           type: 'string',
           title: 'Tagline',
-          description: 'The text that will go in your header.'
+          description: 'The text that will go below headline.'
         }
       ]
     },
     {
-      name: 'description',
-      title: 'Description',
+      name: 'servicesOverview',
+      title: 'Services Overview',
       type: 'text',
-      description: 'The about section of your business'
+      description: 'First Paragraph overview of services'
       
+    },
+    {
+      name: 'servicesCards',
+      title: 'Services Cards',
+      type: 'array',
+      description: 'The cards for your services.  Only Enter 3',
+      of: [
+        {
+          type: 'object',
+          name: 'cardInfo',
+          fields: [
+            {name: 'serviceTitle', type: 'string', title: 'Service Title'},
+            {name: 'serviceDescription', type: 'string', title: 'Service Description'}
+          ]
+        }
+      ]
     },
     {
       name: 'bio',
@@ -47,6 +68,22 @@ export default {
         },
       ],
     },
+    {
+      name: 'reviews',
+      title: 'Reviews',
+      type: 'array',
+      description: 'The image and text for your reviews',
+      of: [
+        {
+          type: 'object',
+          name: 'reviewInfo',
+          fields: [
+            {name: 'reviewImage', type: 'image', title: 'Review Image'},
+            {name: 'reviewText', type: 'string', title: 'Review Text'}
+          ]
+        }
+      ]
+    },
   ],
   preview: {
     select: {
@@ -54,4 +91,5 @@ export default {
       media: 'image',
     },
   },
+
 }
