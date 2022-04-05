@@ -13,6 +13,7 @@ import reviews from './reviews';
 import cardInfo from './cardInfo';
 import reviewInfo from './reviewInfo';
 import contactInfo from './contactInfo';
+import about from './about';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,6 +26,7 @@ export default createSchema({
     // in the studio.
     // post,
     landingPage,
+    about,
     heroImage,
     servicesCards,
     reviews,

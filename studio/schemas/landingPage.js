@@ -21,22 +21,16 @@ export default {
       type: 'servicesCards'
     },
     {
-      name: 'bio',
-      title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-        },
-      ],
+      name: 'about',
+      title: 'About Section',
+      type: 'about',
+      description: 'The about section of your business'
     },
     {
-      name: 'reviews',
-      title: 'Reviews',
-      type: 'reviews'
+      name: 'workDescription',
+      type: 'string',
+      title: 'Work Description',
+      description: 'The small paragraph above work photos'
     },
 
     {
@@ -46,9 +40,11 @@ export default {
       options: {
         sortable: true,
       },
-      validations: {
-        length: 6
-      }
+    },
+    {
+      name: 'reviews',
+      title: 'Reviews',
+      type: 'reviews'
     },
     {
       name: 'contactInfo',
